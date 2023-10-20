@@ -1,0 +1,91 @@
+<div class="container-fluid p-0">
+    <nav class="navbar bg-body-tertiary bg-opacity-10 fixed-top px-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="<%= image_path('capivaras-logo.png') %>" alt="capivaras logo" width="75" height="75" class="d-inline-block">
+            </a>
+        </div>
+    </nav>
+    <div class="mb-4 bg-body-tertiary jumbotron-section">
+      <div class="container-fluid text-center py-5 band-description bg-dark bg-opacity-25">
+        <div class="row mb-3 justify-content-center">
+            <div class="col-11 col-md-6 col-xl-4 col-xxl-3">
+                <img src="<%= image_path('capivaras-nome-logo.png') %>" alt="capivaras do vale" class="img-fluid">
+            </div>
+        </div>
+        <p class="fs-4">Da serra do Rio de Janeiro, mais especificamente de São José do Vale do Rio Preto (a cidade com o maior nome do Brasil), surgiu a banda Capivaras do Vale, com o objetivo de resgatar o rock na cidade.</p>
+        <button onClick="document.getElementById('contact').scrollIntoView();" class="btn btn-primary btn-lg mt-3 px-5" type="button">Contato</button>
+      </div>
+    </div>
+
+    <section class="container-fluid py-5">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <hr class="border-primary border-5 opacity-75"/>
+            </div>
+        </div>
+        <h1 class="text-center mb-5">Integrantes</h1>
+        <div class="row gx-4 gy-5">
+            <div class="col-6 col-sm-3">    
+                <div class="ruan-lopes member-profile">
+                    <h2>Ruan <br/>Lopes</h2>
+                    <p>Vocal e guitarra</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="daniel-diniz member-profile">
+                    <h2>Daniel <br/>Diniz</h2>
+                    <p>Guitarra</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="ricardo-moreira member-profile">
+                    <h2>Ricardo <br/>Moreira</h2>
+                    <p>Bateria</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="marcos-pagayme member-profile">
+                    <h2>Marcos <br/>Pagayme</h2>
+                    <p>Baixo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="social text-center">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <hr class="border-primary border-5 opacity-75"/>
+            </div>
+        </div>
+        <h1 class="mb-5">Instagram</h1>
+        <div class="embedsocial-hashtag" data-ref="041a7ba4a7185373c99d1927e7979f5112d90fb9"> <a class="feed-powered-by-es feed-powered-by-es-slider-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial <span>→</span> </a> </div>
+    </section>
+    <section class="contact container py-5" id="contact">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <hr class="border-primary border-5 opacity-75"/>
+            </div>
+        </div>
+        <h1 class="text-center">Entre em contato</h1>
+        <%= turbo_frame_tag "result_message" do %>        
+            <%= form_with scope: :contact, url: contact_index_path, method: :post, local: false, class: "container", id: "contact-form", data: { controller: 'contact' } do |form| %>
+                <div class="form-group is-required mb-3">
+                    <%= form.label :nome %>
+                    <%= form.text_field :nome, class: "form-control", required: true %>
+                </div>
+                <div class="form-group is-required mb-3">
+                    <%= form.label :email %>
+                    <%= form.email_field :email, class: "form-control", required: true %>
+                </div>
+                <div class="form-group is-required mb-3">
+                    <%= form.label :mensagem %>
+                    <%= form.text_area :mensagem, class: "form-control", required: true %>
+                </div>
+                <%= form.submit "Enviar", class: "btn btn-primary px-5" %>
+            <% end %>
+        <% end %>
+    </section>
+</div>
+
+<%= stylesheet_link_tag "index", "data-turbo-track": "reload" %>

@@ -1,0 +1,38 @@
+.jumbotron-section {
+    background-image: url(image-path('cover.jpg'));
+    background-position: center;
+    padding: 20% 10% 20% 10%;
+}
+
+.member-profile {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 75% 10px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.ruan-lopes {
+    background-image: url(image-path('ruan-lopes.jpg'));
+}
+
+.daniel-diniz {
+    background-image: url(image-path('daniel-diniz.jpg'));
+}
+
+.ricardo-moreira {
+    background-image: url(image-path('ricardo-moreira.jpg'));
+}
+
+.marcos-pagayme {
+    background-image: url(image-path('marcos-pagayme.jpg'));
+}
+
+.band-description {
+    margin-top: 20rem;
+}
+
+.form-group.is-required > label:first-child:after {
+    content: ' *';
+    margin-left: 2px;
+    color: red;
+}
