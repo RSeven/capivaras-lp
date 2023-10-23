@@ -1,10 +1,8 @@
 .jumbotron-section {
-    background-image: url(image-path('cover-mobile.jpg'));
-    background-position: left;
-    padding: 20% 10% 20% 10%;
+    background-color: #000 !important;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
     .jumbotron-section {
         background-image: url(image-path('cover.jpg'));
         background-position: center;
@@ -36,7 +34,13 @@
 }
 
 .band-description {
-    margin-top: 20rem;
+    margin-top: 6rem;
+}
+
+@media (min-width: 768px) {
+    .band-description {
+        margin-top: 20rem;
+    }
 }
 
 .form-group.is-required > label:first-child:after {
