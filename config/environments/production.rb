@@ -65,17 +65,20 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :user_name => Rails.application.credentials[:smtp][:username],
-    :password => Rails.application.credentials[:smtp][:password],
-    :address => 'smtp.gmail.com',
-    :domain => 'smtp.gmail.com',
-    :port => '587',
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+  if Rails.application.credentials.smtp
+    config.action_mailer.smtp_settings = {
+      :user_name => Rails.application.credentials[:smtp][:username],
+      :password => Rails.application.credentials[:smtp][:password],
+      :address => 'smtp.gmail.com',
+      :domain => 'smtp.gmail.com',
+      :port => '587',
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+  end
 
   config.hosts << "capivaras-lp.fly.dev"
+  config.hosts << "capivarasrock.com.br"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
