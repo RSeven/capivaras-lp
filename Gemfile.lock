@@ -116,6 +116,8 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    meta-tags (2.19.0)
+      actionpack (>= 3.2.0, < 7.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
@@ -195,6 +197,8 @@ GEM
       sentry-ruby (~> 5.12.0)
     sentry-ruby (5.12.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
+    sitemap_generator (6.3.0)
+      builder (~> 3.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -242,6 +246,7 @@ DEPENDENCIES
   dockerfile-rails (>= 1.5)
   jbuilder
   jsbundling-rails
+  meta-tags
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)
@@ -249,6 +254,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-rails (~> 5.12)
   sentry-ruby (~> 5.12)
+  sitemap_generator
   sprockets-rails
   stimulus-rails
   turbo-rails
