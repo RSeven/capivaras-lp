@@ -1,7 +1,15 @@
 .jumbotron-section {
-    background-image: url(image-path('cover.jpg'));
-    background-position: center;
+    background-image: url(image-path('cover-mobile.jpg'));
+    background-position: left;
     padding: 20% 10% 20% 10%;
+}
+
+@media (min-width: 700px) {
+    .jumbotron-section {
+        background-image: url(image-path('cover.jpg'));
+        background-position: center;
+        padding: 20% 10% 20% 10%;
+    }
 }
 
 .member-profile {
