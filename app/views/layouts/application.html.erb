@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <%= display_meta_tags site: "Capivaras do Vale", title: "Página Oficial" %>
-    <%= display_meta_tags image_src: image_path('cover.jpg') %>
+    <%= display_meta_tags image_src: image_url('cover.jpg') %>
     <%= display_meta_tags description: "Página oficial da banda Capivaras do Vale, banda de rock e pop rock originada na região serrana do estado do Rio de Janeiro, que tem como principal influência o rock nacional e internacional dos anos 80 e 90." %>
     <%= display_meta_tags keywords: %w[banda rock capivaras vale música] %>
     <%= display_meta_tags og: {
                             title: "Capivaras do Vale - Página Oficial",
+                            description: "Página oficial da banda Capivaras do Vale, banda de rock e pop rock originada na região serrana do estado do Rio de Janeiro, que tem como principal influência o rock nacional e internacional dos anos 80 e 90.",
                             type: "website",
                             url: "http://capivarasrock.com.br",
-                            image: image_path('cover.jpg'),
+                            image: image_url('cover.jpg'),
                           }
     %>
 
